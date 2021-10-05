@@ -1,0 +1,196 @@
+
+# Project information
+site_name: gmx_MMPBSA Documentation
+site_url: https://valdes-tresanco-ms.github.io/gmx_MMPBSA/
+site_author: Mario S. and Mario E. Valdés Tresanco
+site_description: >-
+  gmx_MMPBSA is a new tool based on AMBER's MMPBSA.py aiming to perform end-state free energy calculations with GROMACS
+  files
+
+# Repository
+repo_name: gmx_MMPBSA
+repo_url: https://github.com/Valdes-Tresanco-MS/gmx_MMPBSA
+edit_uri: ""
+
+# Copyright
+copyright: Copyright &copy; 2020 - 2021 MS. and ME. Valdes Tresanco
+
+# Configuration
+theme:
+  name: material
+  logo: assets/logo_white_border.svg
+  custom_dir: docs/overrides
+
+  # 404 page
+  static_templates:
+    - 404.html
+
+  # Don't include MkDocs' JavaScript
+  include_search_page: false
+  search_index_only: true
+
+  # Default values, taken from mkdocs_theme.yml
+  language: en
+  features:
+    # - navigation.instant
+    - navigation.expand
+    - navigation.sections
+    - navigation.tabs
+    - navigation.top
+    - header.autohide
+    - toc.integrate
+
+  palette:
+    - scheme: default
+      primary: black
+      accent: black
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - scheme: slate
+      primary: black
+      accent: black
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/logo.svg
+  icon:
+    logo: logo
+
+# Plugins
+plugins:
+  - search
+  - git-revision-date-localized:
+      type: datetime
+      enable_creation_date: true
+#  - redirects:
+#      redirect_maps:
+##        extensions/admonition.md: reference/admonitions.md
+##        extensions/codehilite.md: reference/code-blocks.md
+##        extensions/footnotes.md: reference/footnotes.md
+##        extensions/metadata.md: reference/meta-tags.md
+##        extensions/permalinks.md: setup/setting-up-navigation.md #permalink
+##        extensions/pymdown.md: reference/admonitions.md
+##        plugins/revision-date.md: setup/adding-a-git-repository.md #revision-date
+##        plugins/search.md: setup/setting-up-site-search.md
+##        releases/4.md: upgrading.md #upgrading-from-4x-to-5x
+##        releases/5.md: upgrading.md #upgrading-from-3x-to-4x
+##        releases/changelog.md: changelog.md
+##        setup/adding-social-links.md: setup/setting-up-the-footer.md
+##        sponsorship.md: insiders.md
+  - minify:
+      minify_html: true
+
+# Customization
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Valdes-Tresanco-MS
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - abbr
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: Valdes-Tresanco-MS
+      repo: gmx_MMPBSA
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Page tree
+nav:
+  - Home: index.md
+  - Getting started:
+    - Getting started: getting-started.md
+    - Introduction: introduction.md
+    - gmx_MMPBSA in a nutshell: summary.md
+    - gmx_MMPBSA vs other programs: versus.md
+    - Installation: installation.md
+    - Command-line: command-line.md
+  - Hands to work:
+    - How gmx_MMPBSA works: howworks.md
+    - The input file: input_file.md
+    - Output Files: output.md
+    - Advanced Options: advanced.md
+    - Python API: api.md
+    - gmx_MMPBSA_ana: analyzer.md
+  - Examples:
+    - Examples: examples/README.md
+    - Analysis:
+      - Protein-Ligand (MT): examples/Protein_ligand/MT/README.md
+      - Stability calculations: examples/Stability/README.md
+      - Alanine scanning: examples/Alanine_scanning/README.md
+      - Decomposition analysis: examples/Decomposition_analysis/README.md
+      - Entropy calculation:
+        - Interaction Entropy: examples/Entropy_calculations/Interaction_Entropy/README.md
+        - nmode Entropy: examples/Entropy_calculations/nmode/README.md
+      - MM/3D-RISM: examples/3D-RISM/README.md
+      - QM/MMGBSA: examples/QM_MMGBSA/README.md
+    - Systems:
+      - Protein-protein: examples/Protein_protein/README.md
+      - Protein-Ligand (ST): examples/Protein_ligand/ST/README.md
+      - Protein-DNA: examples/Protein_DNA/README.md
+      - Metalloprotein-peptide: examples/Metalloprotein_peptide/README.md
+      - Protein-DNA-RNA-Ions-Ligand: examples/Protein_DNA_RNA_Ion_ligand/README.md
+      - Binding free energy calculations in multicomponent systems: examples/Comp_receptor/README.md
+      - Protein-glycan: examples/Protein_glycan/README.md
+      - Membrane proteins: examples/Protein_membrane/README.md
+      - COVID-19 related proteins:
+          - Info: examples/COVID-19_related_proteins/README.md
+          - Main protease: examples/COVID-19_related_proteins/Main_protease_7l5d/README.md
+          - Papain-like protease: examples/COVID-19_related_proteins/Papain-like_protease_7koj/README.md
+          - S1-ACE2 complex: examples/COVID-19_related_proteins/S1-ACE2_complex_7dmu/README.md
+          - S1 RBD with antibody: examples/COVID-19_related_proteins/S1_RBD_with_antibody_6zlr/README.md
+    - Charmm Support:
+        - Protein-Ligand (ST): examples/Protein_ligand_CHARMMff/README.md
+        - Protein-ligand complex embedded in membrane: examples/Protein_membrane_CHARMMff/README.md
+        - Mycalamide A Bound to the Large Ribosomal Subunit: examples/Ribosomal50S_Mycalamide_A/README.md
+        - Protein-Ligand with LPH particles (ST): examples/Protein_ligand_LPH_atoms_CHARMMff/README.md
+  - Q&A:
+    - Support: Q&A/README.md
+    - Installation: Q&A/installation.md
+    - OS issues: Q&A/OS_issues.md
+    - Calculations: Q&A/calculations.md
+  - Changelog:
+    - Changelog: changelog.md
+    - Compatibility: compatibility.md
+  - Private Policy: private_policy.md
+  - Cite us: cite_us.md
+
+google_analytics:
+  - !!python/object/apply:os.getenv ["GOOGLE_ANALYTICS_KEY"]
+  - auto
+
